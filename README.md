@@ -4,6 +4,9 @@
 [<img alt="crates.io" src="https://img.shields.io/crates/v/enum_reflect_extern?logo=rust" height="20">](https://crates.io/crates/enum_reflect_extern)
 [<img alt="crates.io" src="https://img.shields.io/docsrs/enum_reflect_extern?logo=docs.rs&label=docs.rs" height="20">](https://docs.rs/enum_reflect_extern/latest/enum_reflect_extern/)
 
+## <span style="color: red;">LIBRARY IS IN BETA! SOME FEATURES CAN WORK WRONG!</span>
+<span style="color: red;">If you have any error, write about it [here](https://github.com/hrykr/enum-reflect-extern/issues)</span>
+
 ## Dependency for [enum_reflect](https://crates.io/crates/enum_reflect)
 
 Traits, structs and other for [enum_reflect](https://crates.io/crates/enum_reflect).
@@ -17,7 +20,7 @@ Trait EnumReflect automatically implements by `#[derive(EnumReflect)]`.
 > or
 ```toml
 [dependencies]
-enum_reflect_extern = "0.1.1"
+enum_reflect_extern = "0.2.0"
 ```
 
 ## Example Usage

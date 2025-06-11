@@ -5,14 +5,23 @@
 /// # Example Usage
 /// 
 /// ```
-/// fn print_any_enum_fields(target_enum: impl EnumReflect) {
+/// fn print_any_enum_fields(target_enum: impl EnumReflection) {
 ///     for (field, value) in target_enum.get_named_fields() {
 ///         println!("Field {}", field);
 ///     }
 /// }
 /// ```
 /// Function which gets any enum with #[derive(EnumReflect)] and prints it fields.
-trait EnumReflect {
+
+pub trait EnumReflection {
+    fn get_fields(&self) -> Vec<&dyn std::any::Any>;
+    fn get_fields_mut(&mut self) -> Vec<&mut dyn std::any::Any>;
+    fn get_named_fields(&self) -> Vec<(&'static str, &dyn std::any::Any)>;
+    fn get_named_fields_mut(&mut self) -> Vec<(&'static str, &mut dyn std::any::Any)>;
+}
+
+#[deprecated(note = "Use EnumReflection instead, they are simillar")]
+pub trait EnumReflect {
     fn get_fields(&self) -> Vec<&dyn std::any::Any>;
     fn get_fields_mut(&mut self) -> Vec<&mut dyn std::any::Any>;
     fn get_named_fields(&self) -> Vec<(&'static str, &dyn std::any::Any)>;
